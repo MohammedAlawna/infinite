@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infinite/utils/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Infinite',
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: mobileBackgroundColor,
+      ),
+      home: Scaffold(body: Text("Generate Infinite Communities!")),
     );
   }
 }
