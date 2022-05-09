@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "836310769366",
+    "project_id": "infinite-7e617",
+    "storage_bucket": "infinite-7e617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836310769366:android:e299f6c6ac7f4a4454b377",
+        "android_client_info": {
+          "package_name": "com.ima.infinite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836310769366-gna5k7keud21p10hop16o09gtf69t4nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1vQc1G14Vy3RMTZXywkDpC6D16FAY-64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836310769366-gna5k7keud21p10hop16o09gtf69t4nh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "836310769366-ai8psavcmaeeblgvtqs6aqmnhag56tj1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.IMA.infinite"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
