@@ -16,6 +16,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController bioController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
+  String dropdownValue = "YGOMega";
 
   @override
   void dispose() {
@@ -43,25 +44,39 @@ class _SignupScreenState extends State<SignupScreen> {
                 color: primaryColor,
                 height: 64,
               ),
-              const SizedBox(height: 64),
+              const SizedBox(height: 16),
               //circlular widget to accept and show our selected files
               Stack(
                 children: [
-                  const CircleAvatar(radius: 64,
-                   backgroundImage: NetworkImage(
-                     'https://cdn.wallpapersafari.com/9/57/PdJiN3.jpg')
-                     ,),
-                     Positioned(bottom: -10, left: 80, child: IconButton(onPressed: () {}, icon: const Icon(Icons.add_a_photo,),),),
+                  const CircleAvatar(
+                    radius: 64,
+                    backgroundImage: NetworkImage(
+                        'https://cdn.wallpapersafari.com/9/57/PdJiN3.jpg'),
+                  ),
+                  Positioned(
+                    bottom: -10,
+                    left: 80,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.add_a_photo,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-              const SizedBox(height: 32,),
+              const SizedBox(
+                height: 16,
+              ),
               //Text Field For Username
-               TextFieldInput(
+              TextFieldInput(
                 hintText: "Enter Your Username..",
                 textInputType: TextInputType.text,
                 textEditingController: usernameController,
               ),
-              const SizedBox(height: 8,),
+              const SizedBox(
+                height: 8,
+              ),
               //Text Field For
 
               // Text Field For (Email)
@@ -71,7 +86,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 textEditingController: emailController,
               ),
               const SizedBox(
-                height: 32,
+                height: 8,
               ),
               TextFieldInput(
                 hintText: "Enter Your Password..",
@@ -81,14 +96,38 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
               //Button Login
               const SizedBox(
-                height: 32,
+                height: 8,
               ),
-                   TextFieldInput(
+              TextFieldInput(
                 hintText: "Enter Your Bio..",
                 textInputType: TextInputType.text,
                 textEditingController: bioController,
               ),
-              const SizedBox(height: 8,),
+              const SizedBox(
+                height: 8,
+              ),
+              DropdownButton<String>(
+                value: dropdownValue,
+                icon: const Icon(Icons.arrow_downward),
+                elevation: 16,
+                style: const TextStyle(color: Colors.orange),
+                underline: Container(
+                  height: 2,
+                  color: Colors.orange,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue!;
+                  });
+                },
+                items: <String> ['YGOMega', 'PUBG', 'LOL'].map<DropdownMenuItem<String>>((String value){
+                  return DropdownMenuItem<String>(
+                    value: value, 
+                    child: Text(value),
+                  );
+                }).toList()),
+              
+
               InkWell(
                 child: Container(
                   child: const Text('Log In'),
@@ -106,7 +145,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
               const SizedBox(
-                height: 12,
+                height: 8,
               ),
               //Transitioning to Signup.
               Flexible(child: Container(), flex: 2),
